@@ -28,6 +28,12 @@ export default {
 					DEFAULT: 'hsl(var(--primary))',
 					foreground: 'hsl(var(--primary-foreground))'
 				},
+				chemical: {
+					orange: '#D2691E',
+					brown: '#8B4513', 
+					beige: '#F5F5DC',
+					'beige-dark': '#E6E6C7'
+				},
 				secondary: {
 					DEFAULT: 'hsl(var(--secondary))',
 					foreground: 'hsl(var(--secondary-foreground))'
