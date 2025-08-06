@@ -1,6 +1,7 @@
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import Icon from '@/components/ui/icon';
+import BeforeAfterSlider from '@/components/BeforeAfterSlider';
 
 export default function Index() {
   return (
@@ -204,95 +205,255 @@ export default function Index() {
             </p>
           </div>
 
-          <div className="grid lg:grid-cols-2 gap-12">
-            <div className="space-y-6">
-              <Card className="border-0 shadow-lg">
-                <CardContent className="p-8">
-                  <div className="flex justify-between items-center mb-4">
-                    <div className="flex items-center space-x-4">
-                      <Icon name="Sofa" className="text-chemical-orange" size={24} />
-                      <h3 className="text-xl font-semibold text-chemical-brown">Диван 2-местный</h3>
-                    </div>
-                    <span className="text-2xl font-bold text-chemical-orange">от 3500₽</span>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            {/* Диваны */}
+            <Card className="border-0 shadow-lg hover:shadow-xl transition-all duration-300 bg-gradient-to-br from-chemical-orange/5 to-chemical-beige/20">
+              <div className="relative overflow-hidden rounded-t-lg">
+                <img 
+                  src="/img/5a3f8850-e404-49f7-83a8-e5d817c8ce4f.jpg" 
+                  alt="Диваны" 
+                  className="w-full h-48 object-cover"
+                />
+              </div>
+              <CardContent className="p-6">
+                <h3 className="text-xl font-bold text-chemical-brown mb-2">Диваны</h3>
+                <p className="text-gray-600 text-sm mb-4">
+                  Диваны, диваны-кровати, софы, тахты, оттоманки, кушетки
+                </p>
+                <div className="space-y-2 mb-4">
+                  <div className="flex items-center justify-between">
+                    <span className="text-gray-500 line-through">от 1800₽</span>
+                    <span className="bg-red-100 text-red-600 text-xs px-2 py-1 rounded">-25%</span>
                   </div>
-                  <p className="text-gray-600">Полная очистка с удалением пятен и запахов</p>
-                </CardContent>
-              </Card>
+                  <div className="text-2xl font-bold text-chemical-brown">от 1350₽</div>
+                </div>
+                <Button className="w-full bg-chemical-orange hover:bg-chemical-orange/90 text-white">
+                  Заказать
+                </Button>
+              </CardContent>
+            </Card>
 
-              <Card className="border-0 shadow-lg">
-                <CardContent className="p-8">
-                  <div className="flex justify-between items-center mb-4">
-                    <div className="flex items-center space-x-4">
-                      <Icon name="Armchair" className="text-chemical-orange" size={24} />
-                      <h3 className="text-xl font-semibold text-chemical-brown">Диван 3-местный</h3>
-                    </div>
-                    <span className="text-2xl font-bold text-chemical-orange">от 4500₽</span>
+            {/* Кресла и стулья */}
+            <Card className="border-0 shadow-lg hover:shadow-xl transition-all duration-300 bg-gradient-to-br from-chemical-orange/5 to-chemical-beige/20">
+              <div className="relative overflow-hidden rounded-t-lg">
+                <img 
+                  src="/img/73c3218f-1613-437a-9c53-7981820112da.jpg" 
+                  alt="Кресла и стулья" 
+                  className="w-full h-48 object-cover"
+                />
+              </div>
+              <CardContent className="p-6">
+                <h3 className="text-xl font-bold text-chemical-brown mb-2">Кресла и стулья</h3>
+                <p className="text-gray-600 text-sm mb-4">
+                  Кресла, стулья, офисные стулья и кресла, табуреты, кресла-груши
+                </p>
+                <div className="space-y-2 mb-4">
+                  <div className="flex items-center justify-between">
+                    <span className="text-gray-500 line-through">от 800₽</span>
+                    <span className="bg-red-100 text-red-600 text-xs px-2 py-1 rounded">-25%</span>
                   </div>
-                  <p className="text-gray-600">Глубокая чистка всех поверхностей</p>
-                </CardContent>
-              </Card>
+                  <div className="text-2xl font-bold text-chemical-brown">от 600₽</div>
+                </div>
+                <Button className="w-full bg-chemical-orange hover:bg-chemical-orange/90 text-white">
+                  Заказать
+                </Button>
+              </CardContent>
+            </Card>
 
-              <Card className="border-0 shadow-lg">
-                <CardContent className="p-8">
-                  <div className="flex justify-between items-center mb-4">
-                    <div className="flex items-center space-x-4">
-                      <Icon name="Car" className="text-chemical-orange" size={24} />
-                      <h3 className="text-xl font-semibold text-chemical-brown">Кресло</h3>
-                    </div>
-                    <span className="text-2xl font-bold text-chemical-orange">от 2000₽</span>
+            {/* Шторы */}
+            <Card className="border-0 shadow-lg hover:shadow-xl transition-all duration-300 bg-gradient-to-br from-chemical-orange/5 to-chemical-beige/20">
+              <div className="relative overflow-hidden rounded-t-lg">
+                <img 
+                  src="/img/28a15ea3-caf8-492d-a269-07d565508c0a.jpg" 
+                  alt="Шторы" 
+                  className="w-full h-48 object-cover"
+                />
+              </div>
+              <CardContent className="p-6">
+                <h3 className="text-xl font-bold text-chemical-brown mb-2">Шторы</h3>
+                <p className="text-gray-600 text-sm mb-4">
+                  Шторы, тюль, портьеры, рулонные и римские шторы, ламбрекены
+                </p>
+                <div className="space-y-2 mb-4">
+                  <div className="flex items-center justify-between">
+                    <span className="text-gray-500 line-through">от 630₽</span>
+                    <span className="bg-red-100 text-red-600 text-xs px-2 py-1 rounded">-25%</span>
                   </div>
-                  <p className="text-gray-600">Бережная чистка с сохранением формы</p>
-                </CardContent>
-              </Card>
+                  <div className="text-2xl font-bold text-chemical-brown">от 470₽</div>
+                </div>
+                <Button className="w-full bg-chemical-orange hover:bg-chemical-orange/90 text-white">
+                  Заказать
+                </Button>
+              </CardContent>
+            </Card>
 
-              <Card className="border-0 shadow-lg">
-                <CardContent className="p-8">
-                  <div className="flex justify-between items-center mb-4">
-                    <div className="flex items-center space-x-4">
-                      <Icon name="Square" className="text-chemical-orange" size={24} />
-                      <h3 className="text-xl font-semibold text-chemical-brown">Матрас (1 сторона)</h3>
-                    </div>
-                    <span className="text-2xl font-bold text-chemical-orange">от 2500₽</span>
+            {/* Изголовье кроватей */}
+            <Card className="border-0 shadow-lg hover:shadow-xl transition-all duration-300 bg-gradient-to-br from-chemical-orange/5 to-chemical-beige/20">
+              <div className="relative overflow-hidden rounded-t-lg bg-gradient-to-br from-chemical-beige to-chemical-beige-dark h-48 flex items-center justify-center">
+                <Icon name="Bed" className="text-chemical-orange" size={64} />
+              </div>
+              <CardContent className="p-6">
+                <h3 className="text-xl font-bold text-chemical-brown mb-2">Изголовье кроватей</h3>
+                <p className="text-gray-600 text-sm mb-4">
+                  Чистка изголовья и мягкой обивки с боковых сторон
+                </p>
+                <div className="space-y-2 mb-4">
+                  <div className="flex items-center justify-between">
+                    <span className="text-gray-500 line-through">от 1800₽</span>
+                    <span className="bg-red-100 text-red-600 text-xs px-2 py-1 rounded">-25%</span>
                   </div>
-                  <p className="text-gray-600">Антибактериальная обработка</p>
-                </CardContent>
-              </Card>
-            </div>
+                  <div className="text-2xl font-bold text-chemical-brown">от 1350₽</div>
+                </div>
+                <Button className="w-full bg-chemical-orange hover:bg-chemical-orange/90 text-white">
+                  Заказать
+                </Button>
+              </CardContent>
+            </Card>
 
-            <div className="bg-white rounded-2xl shadow-xl p-8">
-              <h3 className="text-2xl font-bold text-chemical-brown mb-6">Что входит в услугу:</h3>
-              <div className="space-y-4">
-                <div className="flex items-center space-x-3">
-                  <Icon name="CheckCircle" className="text-green-500" size={20} />
-                  <span>Предварительный осмотр и оценка</span>
+            {/* Матрасы */}
+            <Card className="border-0 shadow-lg hover:shadow-xl transition-all duration-300 bg-gradient-to-br from-chemical-orange/5 to-chemical-beige/20">
+              <div className="relative overflow-hidden rounded-t-lg bg-gradient-to-br from-chemical-beige to-chemical-beige-dark h-48 flex items-center justify-center">
+                <Icon name="Square" className="text-chemical-orange" size={64} />
+              </div>
+              <CardContent className="p-6">
+                <h3 className="text-xl font-bold text-chemical-brown mb-2">Матрасы</h3>
+                <p className="text-gray-600 text-sm mb-4">
+                  Односторонняя чистка матраса с антибактериальной обработкой
+                </p>
+                <div className="space-y-2 mb-4">
+                  <div className="flex items-center justify-between">
+                    <span className="text-gray-500 line-through">от 3000₽</span>
+                    <span className="bg-red-100 text-red-600 text-xs px-2 py-1 rounded">-25%</span>
+                  </div>
+                  <div className="text-2xl font-bold text-chemical-brown">от 2250₽</div>
                 </div>
-                <div className="flex items-center space-x-3">
-                  <Icon name="CheckCircle" className="text-green-500" size={20} />
-                  <span>Удаление пыли и мусора</span>
+                <Button className="w-full bg-chemical-orange hover:bg-chemical-orange/90 text-white">
+                  Заказать
+                </Button>
+              </CardContent>
+            </Card>
+
+            {/* Ковры */}
+            <Card className="border-0 shadow-lg hover:shadow-xl transition-all duration-300 bg-gradient-to-br from-chemical-orange/5 to-chemical-beige/20">
+              <div className="relative overflow-hidden rounded-t-lg bg-gradient-to-br from-chemical-beige to-chemical-beige-dark h-48 flex items-center justify-center">
+                <Icon name="Grid3X3" className="text-chemical-orange" size={64} />
+              </div>
+              <CardContent className="p-6">
+                <h3 className="text-xl font-bold text-chemical-brown mb-2">Ковры</h3>
+                <p className="text-gray-600 text-sm mb-4">
+                  Глубокая чистка ковров любых размеров и материалов
+                </p>
+                <div className="space-y-2 mb-4">
+                  <div className="flex items-center justify-between">
+                    <span className="text-gray-500 line-through">от 200₽/м²</span>
+                    <span className="bg-red-100 text-red-600 text-xs px-2 py-1 rounded">-25%</span>
+                  </div>
+                  <div className="text-2xl font-bold text-chemical-brown">от 150₽/м²</div>
                 </div>
-                <div className="flex items-center space-x-3">
-                  <Icon name="CheckCircle" className="text-green-500" size={20} />
-                  <span>Обработка пятновыводителем</span>
+                <Button className="w-full bg-chemical-orange hover:bg-chemical-orange/90 text-white">
+                  Заказать
+                </Button>
+              </CardContent>
+            </Card>
+
+            {/* Офисная мебель */}
+            <Card className="border-0 shadow-lg hover:shadow-xl transition-all duration-300 bg-gradient-to-br from-chemical-orange/5 to-chemical-beige/20">
+              <div className="relative overflow-hidden rounded-t-lg bg-gradient-to-br from-chemical-beige to-chemical-beige-dark h-48 flex items-center justify-center">
+                <Icon name="Briefcase" className="text-chemical-orange" size={64} />
+              </div>
+              <CardContent className="p-6">
+                <h3 className="text-xl font-bold text-chemical-brown mb-2">Офисная мебель</h3>
+                <p className="text-gray-600 text-sm mb-4">
+                  Кресла руководителя, офисные стулья, мягкие зоны
+                </p>
+                <div className="space-y-2 mb-4">
+                  <div className="flex items-center justify-between">
+                    <span className="text-gray-500 line-through">от 1200₽</span>
+                    <span className="bg-red-100 text-red-600 text-xs px-2 py-1 rounded">-25%</span>
+                  </div>
+                  <div className="text-2xl font-bold text-chemical-brown">от 900₽</div>
                 </div>
-                <div className="flex items-center space-x-3">
-                  <Icon name="CheckCircle" className="text-green-500" size={20} />
-                  <span>Глубокая химчистка</span>
+                <Button className="w-full bg-chemical-orange hover:bg-chemical-orange/90 text-white">
+                  Заказать
+                </Button>
+              </CardContent>
+            </Card>
+
+            {/* Автомобильные салоны */}
+            <Card className="border-0 shadow-lg hover:shadow-xl transition-all duration-300 bg-gradient-to-br from-chemical-orange/5 to-chemical-beige/20">
+              <div className="relative overflow-hidden rounded-t-lg bg-gradient-to-br from-chemical-beige to-chemical-beige-dark h-48 flex items-center justify-center">
+                <Icon name="Car" className="text-chemical-orange" size={64} />
+              </div>
+              <CardContent className="p-6">
+                <h3 className="text-xl font-bold text-chemical-brown mb-2">Автомобильные салоны</h3>
+                <p className="text-gray-600 text-sm mb-4">
+                  Чистка сидений, потолка, дверных карт автомобиля
+                </p>
+                <div className="space-y-2 mb-4">
+                  <div className="flex items-center justify-between">
+                    <span className="text-gray-500 line-through">от 4000₽</span>
+                    <span className="bg-red-100 text-red-600 text-xs px-2 py-1 rounded">-25%</span>
+                  </div>
+                  <div className="text-2xl font-bold text-chemical-brown">от 3000₽</div>
                 </div>
-                <div className="flex items-center space-x-3">
-                  <Icon name="CheckCircle" className="text-green-500" size={20} />
-                  <span>Антибактериальная обработка</span>
-                </div>
-                <div className="flex items-center space-x-3">
-                  <Icon name="CheckCircle" className="text-green-500" size={20} />
-                  <span>Защитное покрытие</span>
+                <Button className="w-full bg-chemical-orange hover:bg-chemical-orange/90 text-white">
+                  Заказать
+                </Button>
+              </CardContent>
+            </Card>
+          </div>
+
+          <div className="mt-16 bg-white rounded-2xl shadow-xl p-8 max-w-4xl mx-auto">
+            <div className="grid md:grid-cols-2 gap-8">
+              <div>
+                <h3 className="text-2xl font-bold text-chemical-brown mb-6">Что входит в услугу:</h3>
+                <div className="space-y-4">
+                  <div className="flex items-center space-x-3">
+                    <Icon name="CheckCircle" className="text-green-500" size={20} />
+                    <span>Предварительный осмотр и оценка</span>
+                  </div>
+                  <div className="flex items-center space-x-3">
+                    <Icon name="CheckCircle" className="text-green-500" size={20} />
+                    <span>Удаление пыли и мусора</span>
+                  </div>
+                  <div className="flex items-center space-x-3">
+                    <Icon name="CheckCircle" className="text-green-500" size={20} />
+                    <span>Обработка пятновыводителем</span>
+                  </div>
+                  <div className="flex items-center space-x-3">
+                    <Icon name="CheckCircle" className="text-green-500" size={20} />
+                    <span>Глубокая химчистка</span>
+                  </div>
+                  <div className="flex items-center space-x-3">
+                    <Icon name="CheckCircle" className="text-green-500" size={20} />
+                    <span>Антибактериальная обработка</span>
+                  </div>
+                  <div className="flex items-center space-x-3">
+                    <Icon name="CheckCircle" className="text-green-500" size={20} />
+                    <span>Защитное покрытие</span>
+                  </div>
                 </div>
               </div>
-
-              <div className="mt-8 p-4 bg-chemical-orange/10 rounded-lg">
-                <p className="text-sm text-chemical-brown">
-                  <Icon name="Info" className="inline mr-2" size={16} />
-                  Бесплатный выезд мастера для оценки в пределах КАД
-                </p>
+              <div className="bg-chemical-orange/5 rounded-lg p-6">
+                <div className="text-center mb-4">
+                  <Icon name="Gift" className="text-chemical-orange mx-auto mb-2" size={32} />
+                  <h4 className="text-lg font-bold text-chemical-brown">Акция -25%</h4>
+                  <p className="text-gray-600 text-sm">на все услуги до конца месяца</p>
+                </div>
+                <div className="space-y-3 text-sm">
+                  <div className="flex items-center space-x-2">
+                    <Icon name="Info" className="text-chemical-orange" size={16} />
+                    <span>Бесплатный выезд мастера в пределах КАД</span>
+                  </div>
+                  <div className="flex items-center space-x-2">
+                    <Icon name="Clock" className="text-chemical-orange" size={16} />
+                    <span>Работаем ежедневно с 8:00 до 22:00</span>
+                  </div>
+                  <div className="flex items-center space-x-2">
+                    <Icon name="Shield" className="text-chemical-orange" size={16} />
+                    <span>Гарантия результата</span>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -307,54 +468,34 @@ export default function Index() {
               Наши работы
             </h2>
             <p className="text-gray-600 text-lg max-w-2xl mx-auto">
-              Результаты нашей работы говорят сами за себя
+              Перетягивайте ползунок, чтобы увидеть результат наших работ
             </p>
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <Card className="border-0 shadow-lg overflow-hidden group hover:shadow-xl transition-all duration-300">
-              <div className="relative overflow-hidden">
-                <img 
-                  src="/img/cb0722e6-2104-452d-ae37-ec1cc017fabb.jpg" 
-                  alt="До и после химчистки дивана"
-                  className="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300"
-                />
-                <div className="absolute top-4 left-4 bg-white/90 px-3 py-1 rounded-full text-sm font-semibold">
-                  До → После
-                </div>
-              </div>
-              <CardContent className="p-6">
-                <h3 className="font-semibold text-chemical-brown mb-2">Диван из велюра</h3>
-                <p className="text-gray-600 text-sm">Удаление застарелых пятен и восстановление цвета</p>
-              </CardContent>
-            </Card>
+            <BeforeAfterSlider
+              beforeImage="https://cdn.poehali.dev/files/b1cfc5ff-13d8-4f38-bef0-ab536e3ef51a.png"
+              afterImage="/img/7d5b3a32-4f94-4e9b-a606-5e3c574232ee.jpg"
+              alt="Матрас"
+              title="Матрас двуспальный"
+              description="Удаление застарелых пятен и полная дезинфекция"
+            />
 
-            <Card className="border-0 shadow-lg overflow-hidden group hover:shadow-xl transition-all duration-300">
-              <div className="relative overflow-hidden">
-                <img 
-                  src="/img/d8701a89-2d23-4b1b-b874-dd0d8bf4a598.jpg" 
-                  alt="Профессиональное оборудование"
-                  className="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300"
-                />
-                <div className="absolute top-4 left-4 bg-white/90 px-3 py-1 rounded-full text-sm font-semibold">
-                  Оборудование
-                </div>
-              </div>
-              <CardContent className="p-6">
-                <h3 className="font-semibold text-chemical-brown mb-2">Профессиональное оборудование</h3>
-                <p className="text-gray-600 text-sm">Современные технологии для идеального результата</p>
-              </CardContent>
-            </Card>
+            <BeforeAfterSlider
+              beforeImage="https://cdn.poehali.dev/files/b1cfc5ff-13d8-4f38-bef0-ab536e3ef51a.png"
+              afterImage="/img/5a3f8850-e404-49f7-83a8-e5d817c8ce4f.jpg"
+              alt="Диван"
+              title="Диван угловой"
+              description="Восстановление цвета и удаление запахов"
+            />
 
-            <Card className="border-0 shadow-lg overflow-hidden group hover:shadow-xl transition-all duration-300">
-              <div className="relative overflow-hidden bg-gradient-to-br from-chemical-beige to-chemical-beige-dark h-64 flex items-center justify-center">
-                <div className="text-center p-6">
-                  <Icon name="Camera" className="text-chemical-orange mx-auto mb-4" size={48} />
-                  <h3 className="font-semibold text-chemical-brown mb-2">Кресло-качалка</h3>
-                  <p className="text-gray-600 text-sm">Деликатная чистка антикварной мебели</p>
-                </div>
-              </div>
-            </Card>
+            <BeforeAfterSlider
+              beforeImage="https://cdn.poehali.dev/files/b1cfc5ff-13d8-4f38-bef0-ab536e3ef51a.png"
+              afterImage="/img/73c3218f-1613-437a-9c53-7981820112da.jpg"
+              alt="Кресло"
+              title="Кресло велюровое"
+              description="Возвращение первоначального вида и мягкости"
+            />
           </div>
 
           <div className="text-center mt-12">
